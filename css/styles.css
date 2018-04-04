@@ -5,3 +5,23 @@ body {
 .my-name {
   font-size: 2em;
 }
+
+.header {
+  margin-bottom: 1em;
+}
+
+.work {
+  margin-bottom: 1em;
+}
+
+.blog {
+  margin-bottom: 1em;
+}
+
+.post {
+  width: 700px;
+  border-style: solid;
+  border-color: #555555;
+  border-width: 1;
+  border-radius: 5;
+}
