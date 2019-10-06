@@ -1,0 +1,37 @@
+.main-header {
+  background-color:#fafafa;
+
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.soft-edges {
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.new-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem; 
+}
+
+.caption-backing {
+  background-color:#040404AA;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: auto 2rem 2rem;
+}
+
+.about-image {
+  margin: 1rem;
+}
