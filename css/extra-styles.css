@@ -6,8 +6,8 @@
   display: table;
   width: 100%;
   height: auto;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 
   background-position: center center;
   background-repeat: no-repeat;
@@ -35,4 +35,24 @@
 .about-image {
   margin: 1rem;
   max-width: 80%;
+}
+
+.about-description {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.iframe-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
