@@ -1,22 +1,38 @@
 import { useState } from "react";
 
-enum Tabs {
-    blog = "Blob",
-    none = "None"
-}
+export type TabName = 'Blog' | 'Project Highlights' | 'Language Study' | 'Contact' | 'None';
+const TabList: TabName[] = ['Blog', 'Project Highlights', 'Language Study', 'Contact'];
 
-export const TabBar = () => {
-    const [activeTab, setActiveTab] = useState(Tabs.none);
-
+export const TabBar = ({onTabChange, activeTab}: {onTabChange: (tab: TabName) => void; activeTab: TabName}) => {
     return (
-        <div>
-            <div
-                onClick={() => {
-                    setActiveTab(Tabs.blog);
-                }}
-                style={{ fontWeight: activeTab === Tabs.blog ? 800 : 400 }}
-            >
-                Blog
+        <div style={{
+            backgroundColor: '#e085ff',
+            position: 'relative',
+            top: '0',
+            minHeight: '36px',
+            padding: '8px 5%',
+            boxShadow: '0px 5px 7px 1px rgba(0,0,0,0.4)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            minWidth: '945px'
+
+            //-webkit-box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.63); 
+        }}>
+            <div style={{ flexBasis: '50%', fontWeight: '600' }}>it's ya boy</div>
+            <div style={{ flexBasis: '50%', display: 'flex', flexGrow: '1', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                {TabList.map((tabName: TabName) => {
+                    return (
+                        <div
+                            onClick={() => {
+                                onTabChange(tabName);
+                            }}
+                            style={{ cursor: 'pointer', fontWeight: activeTab === (tabName) ? 800 : 400 }}
+                        >
+                            {tabName}
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
