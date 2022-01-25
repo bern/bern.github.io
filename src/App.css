@@ -3,6 +3,11 @@ body {
   color: #1f2232;
 }
 
+a {
+  text-decoration: none;
+  color: #1f2232;
+}
+
 .App {
   text-align: center;
 }

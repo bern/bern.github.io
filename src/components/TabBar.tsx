@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export type TabName = 'Blog' | 'Project Highlights' | 'Language Study' | 'Contact' | 'None';
 const TabList: TabName[] = ['Blog', 'Project Highlights', 'Language Study', 'Contact'];
@@ -19,18 +20,18 @@ export const TabBar = ({onTabChange, activeTab}: {onTabChange: (tab: TabName) =>
 
             //-webkit-box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.63); 
         }}>
-            <div style={{ flexBasis: '50%', fontWeight: '600' }}>it's ya boy</div>
+            <div style={{ flexBasis: '50%', fontWeight: '600' }}><Link to="home">it's ya boy</Link></div>
             <div style={{ flexBasis: '50%', display: 'flex', flexGrow: '1', flexDirection: 'row', justifyContent: 'space-evenly' }}>
                 {TabList.map((tabName: TabName) => {
                     return (
-                        <div
+                        <Link to={tabName.toLowerCase().replace(' ', '')}
                             onClick={() => {
                                 onTabChange(tabName);
                             }}
                             style={{ cursor: 'pointer', fontWeight: activeTab === (tabName) ? 800 : 400 }}
                         >
                             {tabName}
-                        </div>
+                        </Link>
                     )
                 })}
             </div>

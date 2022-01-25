@@ -4,6 +4,7 @@ import './App.css';
 import { TabBar, TabName } from './components/TabBar';
 import { BlogTab } from './components/BlogTab';
 import { Layout } from './components/Layout';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabName>('None');
@@ -42,12 +43,16 @@ function App() {
   }
 
   return (
-    <>
+    <Router>
       <TabBar activeTab={activeTab} onTabChange={(tab: TabName) => {setActiveTab(tab)}}/>
       <Layout>
-        {mainContent}
+        <Routes>
+          <Route path={'/home'} element={mainContent}/>
+          <Route path={'/blog'} element={<BlogTab/>}/>
+          <Route path={'*'} element={<>default!</>}/>
+        </Routes>
       </Layout>
-    </>
+    </Router>
   );
 }
 
