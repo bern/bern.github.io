@@ -7,15 +7,20 @@ body {
   /* background-color: #fafafa; */
   /* color: #1f2232; */
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 a {
   text-decoration: none;
-  color: #0d0106;
+  color: #02010a;
 }
 
 .homeLink {
-  color: #90c;
+  color: #531cb3;
+}
+
+.homeLink:hover {
+  font-weight: bold;
 }
 
 .App {

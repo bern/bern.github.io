@@ -18,7 +18,7 @@ export const TabBar = () => {
   return (
     <NavContainer>
       <YaBoy>
-        <Link to="/home">it's ya boy</Link>
+        <YaBoyLink to="/home">it's ya boy</YaBoyLink>
       </YaBoy>
       <TabsContainer>
         {TAB_LIST.map((tab: TabType) => (
@@ -32,18 +32,24 @@ export const TabBar = () => {
 };
 
 const NavContainer = styled.div`
-  background-color: #fbfbff;
+  background-color: #fffbfc;
   padding: 24px 144px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 18px;
 `;
 
 const YaBoy = styled.div`
   flex-basis: 50%;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 40px;
+`;
+
+const YaBoyLink = styled(Link)`
+  &:hover {
+    color: #5adbff;
+  }
 `;
 
 const TabsContainer = styled.div`
@@ -53,8 +59,9 @@ const TabsContainer = styled.div`
 const TabLink = styled(Link)`
   cursor: pointer;
   margin-right: 24px;
+  font-weight: bold;
 
   &:hover {
-    color: #9900cc;
+    color: #531cb3;
   }
 `;
