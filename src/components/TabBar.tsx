@@ -1,37 +1,60 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-export type TabName = 'About Me' | 'Blog' | 'Project Highlights' | 'Language Study' | 'Contact' | 'None';
-const TabList: TabName[] = ['About Me', 'Blog', 'Project Highlights', 'Contact'];
+type TabType = {
+  title: string;
+  url: string;
+};
+
+const TAB_LIST: TabType[] = [
+  { title: "About Me", url: "about-me" },
+  { title: "Blog", url: "blog" },
+  { title: "Project Highlights", url: "project-highlights" },
+  //   { title: "Language Study", url: "language-study" },
+  { title: "Contact", url: "contact" },
+];
 
 export const TabBar = () => {
-    return (
-        <div style={{
-            backgroundColor: 'white',//'#e085ff',
-            position: 'relative',
-            top: '0',
-            minHeight: '36px',
-            padding: '8px 0px',
-            boxShadow: '0px 5px 7px 1px rgba(0,0,0,0.4)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            minWidth: '945px',
-            fontSize: '1.5rem'
-            //-webkit-box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.63); 
-        }}>
-            {false && <div style={{ flexBasis: '50%', fontWeight: '600' }}><Link to="home">it's ya boy</Link></div>}
-            <div style={{ margin: 'auto', maxWidth: '50%', display: 'flex', flexGrow: '1', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                {TabList.map((tabName: TabName) => {
-                    return (
-                        <Link to={tabName === 'About Me' ? '/' :  tabName.toLowerCase().replace(' ', '')}
-                            style={{ cursor: 'pointer', fontWeight: 400 }} //activeTab === (tabName) ? 800 : 400 }}
-                        >
-                            {tabName}
-                        </Link>
-                    )
-                })}
-            </div>
-        </div>
-    )
-}
+  return (
+    <NavContainer>
+      <YaBoy>
+        <Link to="/home">it's ya boy</Link>
+      </YaBoy>
+      <TabsContainer>
+        {TAB_LIST.map((tab: TabType) => (
+          <TabLink to={tab.url} key={tab.title}>
+            {tab.title}
+          </TabLink>
+        ))}
+      </TabsContainer>
+    </NavContainer>
+  );
+};
+
+const NavContainer = styled.div`
+  background-color: #fbfbff;
+  padding: 24px 144px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+`;
+
+const YaBoy = styled.div`
+  flex-basis: 50%;
+  font-weight: 600;
+  font-size: 1.5rem;
+`;
+
+const TabsContainer = styled.div`
+  max-width: 50%;
+`;
+
+const TabLink = styled(Link)`
+  cursor: pointer;
+  margin-right: 24px;
+
+  &:hover {
+    color: #9900cc;
+  }
+`;

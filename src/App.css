@@ -4,14 +4,14 @@ html {
 
 body {
   /* background-color: #fde8e9; */
-  background-color: #fafafa;
-  color: #1f2232;
-  font-family: 'Roboto', sans-serif;
+  /* background-color: #fafafa; */
+  /* color: #1f2232; */
+  font-family: "Roboto", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: #1f2232;
+  color: #0d0106;
 }
 
 .homeLink {
