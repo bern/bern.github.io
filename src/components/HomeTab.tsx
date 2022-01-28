@@ -55,6 +55,9 @@ export function HomeTab() {
           <a href="https://www.youtube.com/watch?v=c1-Oep9uNwM" target="_blank" className="homeLink" rel="noreferrer">Youtube videos.</a>
         </p>
       </div>
+      <div style={{ fontSize: '2rem' }}>
+          <a href="static/BernieMarger_TechnicalResume.pdf" target="_blank">Resume</a>
+      </div>
     </Layout>
   );
 }
