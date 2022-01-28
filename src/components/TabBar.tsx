@@ -12,7 +12,7 @@ export const TabBar = () => {
             top: '0',
             minHeight: '36px',
             padding: '8px 0px',
-            boxShadow: '0px 5px 7px 1px rgba(0,0,0,0.4)',
+            boxShadow: '0px 1px 1px 1px rgba(0,0,0,0.4)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
