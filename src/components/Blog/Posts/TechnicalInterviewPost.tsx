@@ -55,7 +55,7 @@ You’re prepared on the technical side of things: you have a programming langua
 
 ## Tips for the Technical Question
 
-> “All dreams are outside of our comfort zone. Leaving our comfort zone is the price we must pay to achieve them.” — Steve Jobs
+> _“All dreams are outside of our comfort zone. Leaving our comfort zone is the price we must pay to achieve them.” — Steve Jobs_
 
 The idea of this section may make you uncomfortable, but I’m going to ask you to trust me here and take the real plunge.
 
