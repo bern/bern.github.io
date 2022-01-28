@@ -142,7 +142,7 @@ Our boilerplate already provides an anonymous callback function for handling inc
 player.addEventListener(PlayerEventType.TEXT_METADATA_CUE, function (cue) {
     const clue = cue.text;
     clues.push(clue);
-    document.getElementById("notepad").value = clues.join("\n");
+    document.getElementById("notepad").value = clues.join("\\n");
 });
 \`\`\`
 
@@ -160,6 +160,12 @@ I hope you found this tutorial helpful! If you have any feedback or questions, f
 
 See you next time 👋
 `;
+
+export const IVSPostMetadata = {
+    name: 'Building a Livestreamed Murder Mystery Game with Amazon IVS and Timed Metadata',
+    key: 'building-a-livestreamed-murder-mystery-game-with-amazon-ivs-and-timed-metadata',
+    date: new Date(2020, 9, 9) // October 9, 2020
+}
 
 export function IVSPost() {
   return (

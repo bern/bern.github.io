@@ -88,6 +88,12 @@ Prove to them that you are an **absolute delight** to work with, and it will pay
 Good luck!
 `;
 
+export const TechnicalInterviewPostMetadata = {
+    name: 'Mastering Technical Interviews: A Human Approach',
+    key: 'mastering-technical-interviews-a-human-approach',
+    date: new Date(2017, 2, 4) // March 3, 2017
+}
+
 export function TechnicalInterviewPost() {
   return (
     <Layout>

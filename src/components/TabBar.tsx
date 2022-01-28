@@ -31,6 +31,7 @@ export const TabBar = () => {
                         </Link>
                     )
                 })}
+                <a href="https://berniemarger.com/static/BernieMarger_TechnicalResume.pdf" target="_blank">Download My Resume</a>
             </div>
         </div>
     )
