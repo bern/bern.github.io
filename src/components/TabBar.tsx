@@ -25,13 +25,13 @@ export const TabBar = () => {
                 {TabList.map((tabName: TabName) => {
                     return (
                         <Link to={tabName === 'About Me' ? '/' :  tabName.toLowerCase().replace(' ', '')}
-                            style={{ cursor: 'pointer', fontWeight: 400 }} //activeTab === (tabName) ? 800 : 400 }}
+                            style={{ color: "#1f2232", cursor: 'pointer', fontWeight: 400 }} //activeTab === (tabName) ? 800 : 400 }}
                         >
                             {tabName}
                         </Link>
                     )
                 })}
-                <a href="https://berniemarger.com/static/BernieMarger_TechnicalResume.pdf" target="_blank">Download My Resume</a>
+                <a style={{ color: "#1f2232" }} href="/static/TechnicalResume_2022.pdf" target="_blank">Download My Resume</a>
             </div>
         </div>
     )
