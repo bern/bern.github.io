@@ -1,8 +1,6 @@
-import ReactMarkdown from 'react-markdown';
-import { Link, Route, Routes, useMatch, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { IVSPost, IVSPostMetadata } from './Blog/Posts/IVSPost';
 import { TechnicalInterviewPost, TechnicalInterviewPostMetadata } from './Blog/Posts/TechnicalInterviewPost';
-import { Layout } from './Layout';
 
 const BlogPosts = [
     IVSPostMetadata,
@@ -22,18 +20,16 @@ export function Blog() {
     }
 
     return (
-        <Layout>    
-            <div>
-                Here is some writing I've done in the past:
-                {BlogPosts.map((blogPostMetadata) => (
-                    <p>
-                        {blogPostMetadata.date.toLocaleDateString('en-US')} -{' '}
-                        <Link to={blogPostMetadata.key}>
-                            {blogPostMetadata.name}
-                        </Link>
-                    </p>
-                ))}
-            </div>
-        </Layout>
+        <div>
+            Here is some writing I've done in the past:
+            {BlogPosts.map((blogPostMetadata) => (
+                <p>
+                    {blogPostMetadata.date.toLocaleDateString('en-US')} -{' '}
+                    <Link to={blogPostMetadata.key}>
+                        {blogPostMetadata.name}
+                    </Link>
+                </p>
+            ))}
+        </div>
     );
 }

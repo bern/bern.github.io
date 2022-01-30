@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import './App.css';
-import { TabBar, TabName } from './components/TabBar';
+import { TabBar } from './components/TabBar';
 import { Blog } from './components/Blog';
 import { AboutMe } from './components/AboutMe';
 import { Layout } from './components/Layout';

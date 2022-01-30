@@ -9,11 +9,37 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.blogContent > pre {
+  overflow-wrap: break-word;
+  white-space: break-spaces;
+}
+
+.blogContent > p {
+  overflow-wrap: break-word;
+  white-space: break-spaces;
+}
+
+.blogContent > p > img {
+  width: 75%;
+  margin: auto;
+  display: block;
+}
+
 .layout {
-  padding: 0px 15%;
-  margin-top: 32px;
+  padding: 0px 25%;
+  margin-top: 68px;
   margin-bottom: 32px;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .layout {
+    padding: 0px 10%;
+  }
+
+  .blogContent > p > img {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -75,7 +101,9 @@ img {
 
 .tabBar {
   background-color: white;
-  position: relative;
+  position: fixed;
+  margin-bottom: 36px;
+  width: 100%;
   top: 0;
   min-height: 36px;
   padding: 8px 0px;
@@ -83,8 +111,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 420px;
   font-size: 1.5rem;
+  z-index: 100;
 }
 
 .tabContainer {

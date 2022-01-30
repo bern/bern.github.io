@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
-import { Layout } from '../../Layout';
+import { BlogPost } from '../BlogPost';
 
 const post = `
 # Building a Livestreamed Murder Mystery Game with Amazon IVS and Timed Metadata
@@ -168,19 +168,5 @@ export const IVSPostMetadata = {
 }
 
 export function IVSPost() {
-  return (
-    <Layout>
-      <div>
-        <Link to="/blog">Back to Blog</Link>
-      </div>
-      <div>
-        <ReactMarkdown>
-          {post}
-        </ReactMarkdown>
-      </div>
-      <div>
-        <Link to="/blog">Back to Blog</Link>
-      </div>
-    </Layout>
-  );
+  return <BlogPost postMarkdown={post}/>;
 }
