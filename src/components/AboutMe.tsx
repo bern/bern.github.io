@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Layout } from './Layout';
 import * as Icons from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function AboutMe() {
   library.add(Icons.faLinkedin, Icons.faTwitch, Icons.faTwitter, Icons.faGithub);
@@ -59,7 +59,7 @@ export function AboutMe() {
           {' '}
           <a href="https://www.youtube.com/watch?v=c1-Oep9uNwM" target="_blank" className="homeLink" rel="noreferrer">Youtube videos.</a>
         </p>
-        <div style={{ width: '30%', display: 'flex', justifyContent: 'space-around', margin: '48px auto'}}>
+        <div className="socialContainer">
           <a className="socialLink" href="https://linkedin.com/in/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'linkedin']}/></a>
           <a className="socialLink" href="https://twitter.com/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter']}/></a>
           <a className="socialLink" href="https://twitch.tv/bern" target="_blank"><FontAwesomeIcon icon={['fab', 'twitch']}/></a>

@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export type TabName = 'About Me' | 'Blog' | 'Projects' | 'Language Study' | 'Contact' | 'None';
 const TabList: TabName[] = ['About Me', 'Blog', 'Projects'];
@@ -7,12 +10,11 @@ const TabList: TabName[] = ['About Me', 'Blog', 'Projects'];
 export const TabBar = () => {
     const { pathname: activePathName } = useLocation();
 
-    console.log(activePathName)
+    library.add(Icons.faArrowAltCircleDown);
 
     return (
         <div className='tabBar'>
-            {false && <div style={{ flexBasis: '50%', fontWeight: '600' }}><Link to="home">it's ya boy</Link></div>}
-            <div style={{ margin: 'auto', maxWidth: '50%', display: 'flex', flexGrow: '1', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <div className='tabContainer'>
                 {TabList.map((tabName: TabName) => {
                     let tabPath = tabName.toLowerCase().replace(' ','');
                     if (tabName === 'About Me') {
@@ -25,7 +27,7 @@ export const TabBar = () => {
                         </Link>
                     )
                 })}
-                <a className='tab' href="/static/TechnicalResume_2022.pdf" target="_blank">Download My Resume</a>
+                <a className='tab' href="/static/TechnicalResume_2022.pdf" target="_blank">Download Resume</a>
             </div>
         </div>
     )

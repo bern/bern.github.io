@@ -20,7 +20,7 @@ export const ProjectCard = (props: IProjectCardProps) => {
     );
 
     return (
-        <div style={{ width: '45%' }}>
+        <div className="projectCardContainer">
             { linkUrl ? (<a href={linkUrl} target="_blank">{cardContent}</a>) : (<>{cardContent}</>) }
         </div>
     );

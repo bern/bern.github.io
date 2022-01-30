@@ -9,6 +9,41 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.layout {
+  padding: 0px 15%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  .layout {
+    padding: 0px 16px;
+  }
+
+  .tabContainer {
+    max-width: initial !important;
+  }
+
+  .socialContainer {
+    width: 60% !important;
+  }
+
+  .projectContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .tabBar {
+    min-width: initial !important;
+  }
+
+  .projectCardContainer {
+    width: 100% !important;
+  }
+}
+
 a {
   text-decoration: none;
   color: #90c;
@@ -22,6 +57,21 @@ img {
   width: 100%;
 }
 
+.socialContainer {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  margin: 48px auto;
+}
+
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
 .tabBar {
   background-color: white;
   position: relative;
@@ -32,8 +82,17 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 945px;
+  min-width: 420px;
   font-size: 1.5rem;
+}
+
+.tabContainer {
+  margin: auto;
+  max-width: 50%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .activeTab::after {
@@ -82,6 +141,10 @@ img {
 .projectCard:hover {
   transition: all 0.2s;
   transform: scale(1.03);
+}
+
+.projectCardContainer {
+  width: 45%;
 }
 
 .socialLink {
