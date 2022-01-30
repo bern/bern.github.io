@@ -20,7 +20,7 @@ function App() {
             <Route path={':postName'} element={<Blog/>}/>
           </Route>
           <Route path={'/contact'} element={<Contact/>}/>
-          <Route path={'/projecthighlights'} element={<Projects/>}/>
+          <Route path={'/projects'} element={<Projects/>}/>
         </Routes>
       </Layout>
     </Router>

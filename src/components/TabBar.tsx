@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-export type TabName = 'About Me' | 'Blog' | 'Project Highlights' | 'Language Study' | 'Contact' | 'None';
-const TabList: TabName[] = ['About Me', 'Blog', 'Project Highlights'];
+export type TabName = 'About Me' | 'Blog' | 'Projects' | 'Language Study' | 'Contact' | 'None';
+const TabList: TabName[] = ['About Me', 'Blog', 'Projects'];
 
 export const TabBar = () => {
     const { pathname: activePathName } = useLocation();
