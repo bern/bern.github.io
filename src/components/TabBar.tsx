@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export type TabName = 'About Me' | 'Blog' | 'Project Highlights' | 'Language Study' | 'Contact' | 'None';
-const TabList: TabName[] = ['About Me', 'Blog', 'Project Highlights', 'Contact'];
+const TabList: TabName[] = ['About Me', 'Blog', 'Project Highlights'];
 
 export const TabBar = () => {
     return (

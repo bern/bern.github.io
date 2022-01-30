@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from './Layout';
+import * as Icons from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function AboutMe() {
+  library.add(Icons.faLinkedin, Icons.faTwitch, Icons.faTwitter, Icons.faGithub);
+
   return (
     <Layout>
       <div style={{ fontSize: '2rem' }}>
@@ -54,6 +59,12 @@ export function AboutMe() {
           {' '}
           <a href="https://www.youtube.com/watch?v=c1-Oep9uNwM" target="_blank" className="homeLink" rel="noreferrer">Youtube videos.</a>
         </p>
+        <div style={{ width: '30%', display: 'flex', justifyContent: 'space-around', margin: '48px auto'}}>
+          <a style={{ color: '#1f2232' }} href="https://linkedin.com/in/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'linkedin']}/></a>
+          <a style={{ color: '#1f2232' }} href="https://twitter.com/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter']}/></a>
+          <a style={{ color: '#1f2232' }} href="https://twitch.tv/bern" target="_blank"><FontAwesomeIcon icon={['fab', 'twitch']}/></a>
+          <a style={{ color: '#1f2232' }} href="https://github.com/bern" target="_blank"><FontAwesomeIcon icon={['fab', 'github']}/></a>
+        </div>
       </div>
     </Layout>
   );
