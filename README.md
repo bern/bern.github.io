@@ -1,6 +1,6 @@
 # bern.github.io
 
-This is my personal site! It is currently hosted at [](https://berniemarger.com).
+This is my personal site! It is currently hosted at [https://berniemarger.com](https://berniemarger.com).
 
 ## How it was made
 
