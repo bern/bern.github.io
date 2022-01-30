@@ -28,7 +28,7 @@ export function AboutMe() {
           <a href="https://twitch.tv/videos/487554756?t=18m30s" target="_blank" className="homeLink" rel="noreferrer">event organizer</a>
           , and as someone who excels at
           {' '}
-          <Link to="/contact" className="homeLink">building relationships.</Link>
+          <a href="mailto:bern422@gmail.com" target="_blank" className="homeLink">building relationships.</a>
         </p>
         <p>
           I've worked professionally as a Software Engineer for the past 5+ years in the
@@ -46,7 +46,7 @@ export function AboutMe() {
         <p>
           Interested in hiring me? Interested in collaborating on a project? Anything else?
           {' '}
-          <Link to="/contact" className="homeLink">Get in touch!</Link>
+          <a href="mailto:bern422@gmail.com" target="_blank" className="homeLink">Get in touch!</a>
         </p>
         <p>
           If you're still curious to learn more, check out what I've been
@@ -60,10 +60,10 @@ export function AboutMe() {
           <a href="https://www.youtube.com/watch?v=c1-Oep9uNwM" target="_blank" className="homeLink" rel="noreferrer">Youtube videos.</a>
         </p>
         <div style={{ width: '30%', display: 'flex', justifyContent: 'space-around', margin: '48px auto'}}>
-          <a style={{ color: '#1f2232' }} href="https://linkedin.com/in/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'linkedin']}/></a>
-          <a style={{ color: '#1f2232' }} href="https://twitter.com/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter']}/></a>
-          <a style={{ color: '#1f2232' }} href="https://twitch.tv/bern" target="_blank"><FontAwesomeIcon icon={['fab', 'twitch']}/></a>
-          <a style={{ color: '#1f2232' }} href="https://github.com/bern" target="_blank"><FontAwesomeIcon icon={['fab', 'github']}/></a>
+          <a className="socialLink" href="https://linkedin.com/in/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'linkedin']}/></a>
+          <a className="socialLink" href="https://twitter.com/berniemarger" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter']}/></a>
+          <a className="socialLink" href="https://twitch.tv/bern" target="_blank"><FontAwesomeIcon icon={['fab', 'twitch']}/></a>
+          <a className="socialLink" href="https://github.com/bern" target="_blank"><FontAwesomeIcon icon={['fab', 'github']}/></a>
         </div>
       </div>
     </Layout>

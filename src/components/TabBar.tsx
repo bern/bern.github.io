@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export type TabName = 'About Me' | 'Blog' | 'Project Highlights' | 'Language Study' | 'Contact' | 'None';
 const TabList: TabName[] = ['About Me', 'Blog', 'Project Highlights'];
 
 export const TabBar = () => {
+    const { pathname: activePathName } = useLocation();
+
+    console.log(activePathName)
+
     return (
         <div style={{
             backgroundColor: 'white',//'#e085ff',
@@ -23,15 +27,18 @@ export const TabBar = () => {
             {false && <div style={{ flexBasis: '50%', fontWeight: '600' }}><Link to="home">it's ya boy</Link></div>}
             <div style={{ margin: 'auto', maxWidth: '50%', display: 'flex', flexGrow: '1', flexDirection: 'row', justifyContent: 'space-evenly' }}>
                 {TabList.map((tabName: TabName) => {
+                    let tabPath = tabName.toLowerCase().replace(' ','');
+                    if (tabName === 'About Me') {
+                        tabPath = ''
+                    }
+
                     return (
-                        <Link to={tabName === 'About Me' ? '/' :  tabName.toLowerCase().replace(' ', '')}
-                            style={{ color: "#1f2232", cursor: 'pointer', fontWeight: 400 }} //activeTab === (tabName) ? 800 : 400 }}
-                        >
+                        <Link className={`tab ${`/${tabPath}` === activePathName ? `activeTab` : ``}`} to={`/${tabPath}`}>
                             {tabName}
                         </Link>
                     )
                 })}
-                <a style={{ color: "#1f2232" }} href="/static/TechnicalResume_2022.pdf" target="_blank">Download My Resume</a>
+                <a className='tab' href="/static/TechnicalResume_2022.pdf" target="_blank">Download My Resume</a>
             </div>
         </div>
     )
