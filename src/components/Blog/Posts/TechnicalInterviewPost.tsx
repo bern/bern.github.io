@@ -97,15 +97,15 @@ export const TechnicalInterviewPostMetadata = {
 export function TechnicalInterviewPost() {
   return (
     <Layout>
-      <div style={{ fontSize: '2rem' }}>
+      <div>
         <Link to="/blog">Back to Blog</Link>
       </div>
-      <div style={{ fontSize: '2rem' }}>
+      <div>
         <ReactMarkdown>
           {post}
         </ReactMarkdown>
       </div>
-      <div style={{ fontSize: '2rem' }}>
+      <div>
         <Link to="/blog">Back to Blog</Link>
       </div>
     </Layout>

@@ -12,9 +12,9 @@ export const ProjectCard = (props: IProjectCardProps) => {
 
     const cardContent = (
         <div className="projectCard" style={{ backgroundImage: `url("${imageUrl}")` }}>
-            <div style={{ backgroundColor: 'rgba(12,13,20,0.6)', color: '#fafafa', padding: '8px 8px'}}>
-                <div style={{ fontSize: '2rem', marginBottom: '8px' }}>{title}</div>
-                <div style={{ fontSize: '1.5rem' }}>{description}</div>
+            <div className="projectCard__content">
+                <div className="projectCard__title">{title}</div>
+                <div className="projectCard__desc">{description}</div>
             </div>
         </div>
     );

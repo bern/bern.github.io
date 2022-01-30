@@ -12,7 +12,7 @@ export function AboutMe() {
 
   return (
     <Layout>
-      <div style={{ fontSize: '2rem' }}>
+      <div>
         <p>Hey there! 👋</p>
         <p>I'm Bernie (he/him). I'm currently living in Brooklyn, NY, USA.</p>
         <p>

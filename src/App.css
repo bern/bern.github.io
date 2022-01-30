@@ -13,6 +13,7 @@ body {
   padding: 0px 15%;
   margin-top: 32px;
   margin-bottom: 32px;
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -145,6 +146,20 @@ img {
 
 .projectCardContainer {
   width: 45%;
+}
+
+.projectCard__content {
+  background-color: rgba(12,13,20,0.6);
+  color: #fafafa;
+  padding: 8px;
+}
+
+.projectCard__title {
+  margin-bottom: 8px;
+}
+
+.projectCard__desc {
+  font-size: 1.5rem;
 }
 
 .socialLink {

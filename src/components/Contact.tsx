@@ -3,7 +3,7 @@ import { Layout } from "./Layout";
 export const Contact = () => {
     return (
         <Layout>
-            <div style={{ fontSize: '2rem' }}>
+            <div>
                 <p><a href="https://twitter.com/berniemarger" target="_blank">Twitter @berniemarger</a></p>
                 <p><a href="https://twitch.tv/bern" target="_blank">Twitch @bern</a></p>
                 <p><a href="https://github.com/bern" target="_blank">Github @bern</a></p>

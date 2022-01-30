@@ -23,7 +23,7 @@ export function Blog() {
 
     return (
         <Layout>    
-            <div style={{ fontSize: '2rem' }}>
+            <div>
                 Here is some writing I've done in the past:
                 {BlogPosts.map((blogPostMetadata) => (
                     <p>
