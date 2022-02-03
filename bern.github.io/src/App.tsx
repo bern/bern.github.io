@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Contact } from './components/Contact';
 import { Projects } from './components/Projects';
 import { DrinkMix } from './components/DrinkMix/DrinkMix';
+import Modal from 'react-modal';
 
 function App() {
   return (

@@ -198,3 +198,129 @@ img {
   color: #90c;
   transition: all 0.2s;
 }
+
+/* Drink Mix Styles */
+.newIngredientModal__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  padding: 0 16px;
+  border: 1px solid #777;
+  border-radius: 8px;
+  box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.4);
+  width: 320px;
+  outline: none;
+}
+
+.newIngredientModal__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 16px 0;
+}
+
+.newIngredientModal__closeButton {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  padding: 4px 6px 10px 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.newIngredientModal__closeButton > svg {
+  width: initial !important;
+  height: initial;
+}
+
+.newIngredientModal__closeButton:hover {
+  background-color: #ccc;
+  transition: all 0.2s;
+}
+
+.newIngredientModal__spacer {
+  height: 2px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.newIngredientModal__form {
+  margin: 16px 0;
+}
+
+.newIngredientModal__form > div {
+  margin-top: 16px;
+}
+
+.newIngredientModal__form--input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #999;
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  width: 70%
+}
+
+.newIngredientModal__form--input:focus {
+  box-shadow: 0px 0px 2px 2px rgba(17, 131, 202, 0.8);
+  transition: all 0.2s;
+  outline: none;
+}
+
+.newIngredientModal__form--input:focus + .newIngredientModal__form--label {
+  font-size: 1.4rem;
+  transition: all 0.3s ease-in-out;
+  color: black;
+}
+
+.newIngredientModal__form--label {
+  display: block;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+.newIngredientModal__actionButtonRow {
+  display: flex;
+  flex-direction: row;
+  margin: 16px 0;
+  justify-content: left;
+  max-width: 150px;
+}
+
+.newIngredientModal__button, .newIngredientModal__button--secondary {
+  cursor: pointer;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.newIngredientModal__button {
+  background-color: #1183CA;
+  border: 2px solid #1183CA;
+  color: white;
+}
+
+.newIngredientModal__button:hover {
+  border: 2px solid #0E69A2;
+  background-color: #0E69A2;
+  transition: all 0.2s;
+}
+
+.newIngredientModal__button--secondary {
+  margin-left: 8px;
+}
+
+.newIngredientModal__button--secondary:hover {
+  background-color: #ccc;
+  transition: all 0.2s;
+}

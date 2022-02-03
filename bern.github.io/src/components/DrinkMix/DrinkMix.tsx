@@ -1,4 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Modal from 'react-modal';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface IIngredient {
     name: string;
@@ -7,6 +11,8 @@ interface IIngredient {
 }
 
 const IngredientForm = ({onIngredientSave}: {onIngredientSave: (name: string, amount: number, color: string) => void}) => {
+    library.add(Icons.faTimes);
+
     const [ingredient, setIngredient] = useState<IIngredient>();
     const [isEditing, setIsEditing] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -24,30 +30,60 @@ const IngredientForm = ({onIngredientSave}: {onIngredientSave: (name: string, am
     }
 
     return (
-        <div style={{ border: hasError ? '1px solid red' : undefined }}>
-            <div>Ingredient <input type="text" ref={ingredientRef} defaultValue={ingredient && ingredient.name}></input></div>
-            <div>Amount <input type="text" placeholder="in ounces" ref={amountRef} defaultValue={ingredient && ingredient.amount}></input></div>
-            <div>Color <input type="text" placeholder="hex code, like #9900cc" ref={colorRef} defaultValue={ingredient && ingredient.color}></input></div>
-            <div style={{ cursor: 'pointer', border: '1px solid black' }} onClick={() => {
-                const name = ingredientRef && ingredientRef.current && ingredientRef.current.value || '';
-                const amount = amountRef && amountRef.current && parseFloat(amountRef.current.value) || 0;
-                const color = colorRef && colorRef.current && colorRef.current.value || '';
+        <Modal
+            isOpen={isEditing}
+            className="newIngredientModal__container"
+            appElement={document.getElementById('root') || undefined}
+        >
+            <div style={{ border: hasError ? '1px solid red' : undefined }}>
+                <div className="newIngredientModal__title">New Ingredient</div>
+                <div id="modal-close" className="newIngredientModal__closeButton" onClick={() => {
+                    setIsEditing(false);
+                }}><FontAwesomeIcon icon="times"/></div>
+                <div className="newIngredientModal__spacer"/>
+                <div className="newIngredientModal__form">
+                    <div>
+                        <input className="newIngredientModal__form--input" type="text" ref={ingredientRef} defaultValue={ingredient && ingredient.name}/>
+                        <span className="newIngredientModal__form--label">Ingredient</span>
+                    </div>
+                    <div>
+                        <input className="newIngredientModal__form--input" type="text" placeholder="in ounces" ref={amountRef} defaultValue={ingredient && ingredient.amount}/>
+                        <span className="newIngredientModal__form--label">Amount</span>
+                    </div>
+                    <div>
+                        <input className="newIngredientModal__form--input" type="text" placeholder="hex code, like #9900cc" ref={colorRef} defaultValue={ingredient && ingredient.color}/>
+                        <span className="newIngredientModal__form--label">Color</span>
+                    </div>
+                </div>
+                <div className="newIngredientModal__spacer"/>
+                <div id="modal-button-row" className="newIngredientModal__actionButtonRow">
+                    <div className="newIngredientModal__button" tabIndex={0} onClick={() => {
+                        const name = ingredientRef && ingredientRef.current && ingredientRef.current.value || '';
+                        const amount = amountRef && amountRef.current && parseFloat(amountRef.current.value) || 0;
+                        const color = colorRef && colorRef.current && colorRef.current.value || '';
 
-                if (name === '' || amount <= 0 || color === '') {
-                    setHasError(true);
-                    return;
-                }
+                        if (name === '' || amount <= 0 || color === '') {
+                            setHasError(true);
+                            return;
+                        }
 
-                setIngredient({
-                    name,
-                    amount,
-                    color
-                });
-                setHasError(false);
-                setIsEditing(false);
-                onIngredientSave(name, amount, color);
-            }}>Save</div>
-        </div>
+                        setIngredient({
+                            name,
+                            amount,
+                            color
+                        });
+                        setHasError(false);
+                        setIsEditing(false);
+                        onIngredientSave(name, amount, color);
+                    }}>Save</div>
+                    <div className="newIngredientModal__button--secondary" tabIndex={0} onClick={() => {
+                        setIsEditing(false);
+                    }} >
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </Modal>
     );
 }
 
@@ -56,7 +92,7 @@ export const DrinkMix = () => {
     const [isSaved, setIsSaved] = useState(false);
 
     return (
-        <div>
+        <div id="drink-mix-app">
             Let's create a recipe :)
             {ingredients.map((ingredient: IIngredient, i: number) => {
                 return (
