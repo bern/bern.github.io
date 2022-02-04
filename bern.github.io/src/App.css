@@ -281,17 +281,45 @@ img {
 }
 
 .drinkMix__glass--outer {
-  height: 315px;
+  height: 303px;
   width: 200px;
-  border-left: 4px solid black;
-  border-right: 4px solid black;
-  border-bottom: 4px solid black;
+  border-radius: 0px 0px 70px 70px;
+  border-left: 2px solid #777;
+  border-right: 2px solid #777;
+  border-bottom: 2px solid #777;
+  position: relative;
+}
+
+.drinkMix__glass--top {
+  width: 200px;
+  height: 20px;
+  top: -12px;
+  left: -2px;
+  position: absolute;
+  border: 2px solid #777;
+  border-radius: 50%;
+}
+
+.drinkMix__glass--shade {
+  height: 300px;
+  width: 200px;
+  border-radius: 0px 0px 65px 65px;
+  background-color: rgba(150, 150, 150, 0.1);
+  position: absolute;
+  top: 3px;
+  left: 0;
+  clip-path: polygon(74% 2%, 74% 5%, 74% 8%, 74% 13%, 74% 18%, 73% 27%, 72% 36%, 69% 46%, 64% 57%, 56% 68%, 48% 76%, 36% 84%, 23% 91%, 13% 96%, 18% 98%, 25% 99%, 35% 100%, 71% 100%, 89% 100%, 92% 99%, 96% 95%, 99% 89%, 100% 82%, 100% 0%, 89% 1%);
 }
 
 .drinkMix__glass--inner {
-  padding-top: 15px;
+  padding-top: 3px;
   height: 300px;
   width: 100%;
+  border-radius: 0px 0px 70px 70px;
+}
+
+.drinkMix__glass--contents:last-child {
+  border-radius: 0px 0px 67px 67px;
 }
 
 .drinkMix__glass--contents {
