@@ -1,24 +1,25 @@
 import { IIngredient } from "./DrinkMix"
+import { IngredientList } from "./IngredientList";
 
 interface IDrinkArtProps {
-    ingredients: IIngredient[];
+    filteredIngredients: IIngredient[];
 }
 
 export const DrinkArt = (props: IDrinkArtProps) => {
-    const { ingredients } = props;
+    const { filteredIngredients } = props;
 
     return (
         <div className="drinkMix__glass--outer">
             <div className="drinkMix__glass--top"/>
             <div className="drinkMix__glass--shade"/>
             <div className="drinkMix__glass--inner">
-                {ingredients.filter((ingredient: IIngredient) => ingredient.name !== '').map((ingredient: IIngredient, index: number) => {
+                {filteredIngredients.map((ingredient: IIngredient, index: number) => {
                     let backgroundColor = ingredient.color;
-                    if(index + 1 < ingredients.length) {
-                        backgroundColor = `linear-gradient(180deg, ${ingredient.color} 90%, ${ingredients[index+1].color} 100%)`;
+                    if(index + 1 < filteredIngredients.length) {
+                        backgroundColor = `linear-gradient(180deg, ${ingredient.color} 90%, ${filteredIngredients[index+1].color} 100%)`;
                     }
 
-                    const totalOunces = ingredients.reduce((acc: number, obj: IIngredient) => {
+                    const totalOunces = filteredIngredients.reduce((acc: number, obj: IIngredient) => {
                         if (!obj) {
                             return acc;
                         }

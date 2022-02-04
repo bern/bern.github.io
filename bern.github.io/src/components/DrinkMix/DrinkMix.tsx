@@ -8,6 +8,8 @@ export interface IIngredient {
     color: string;
 }
 
+export const filteredIngredients = (ingredients: IIngredient[]) => ingredients.filter((i: IIngredient) => i.name !== '');
+
 export const DrinkMix = () => {
     const [ingredients, setIngredients] = useState<IIngredient[]>(Array.from(Array(0)));
 
@@ -17,7 +19,7 @@ export const DrinkMix = () => {
             <div className="drinkMix__container">
                 <div className="drinkMix__ingredientsContainer">
                     <IngredientList
-                        ingredients={ingredients}
+                        filteredIngredients={filteredIngredients(ingredients)}
                         onEditIngredient={(index: number, updatedIngredient: IIngredient) => {
                             setIngredients(ingredients.map((ingredient: IIngredient, idx: number) => {
                                 if (idx === index) {
@@ -38,7 +40,7 @@ export const DrinkMix = () => {
                     />
                 </div>
                 <div className="drinkMix__glassContainer">
-                    <DrinkArt ingredients={ingredients}/>
+                    <DrinkArt filteredIngredients={filteredIngredients(ingredients)}/>
                 </div>
             </div>
         </div>

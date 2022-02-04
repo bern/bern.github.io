@@ -5,21 +5,20 @@ import { DrinkMixButton } from "./DrinkMixButton";
 import { IngredientListItem } from "./IngredientListItem";
 
 interface IIngredientListProps {
-    ingredients: IIngredient[];
+    filteredIngredients: IIngredient[];
     onEditIngredient: (index: number, ingredient: IIngredient) => void;
     addEmptyIngredient: () => void;
     deleteIngredient: (index: number) => void;
 }
 
 export const IngredientList = (props: IIngredientListProps) => {
-    const { ingredients, addEmptyIngredient, onEditIngredient, deleteIngredient } = props;
+    const { filteredIngredients, addEmptyIngredient, onEditIngredient, deleteIngredient } = props;
 
     const [isEditingIndex, setIsEditingIndex] = useState(-1);
 
     return (
         <div className="drinkMix__ingredientList">
-            {ingredients
-                .filter((ingredient: IIngredient) => ingredient.name !== '')
+            {filteredIngredients
                 .map((ingredient: IIngredient, index: number) => {
                     return (
                         <IngredientListItem
@@ -36,7 +35,7 @@ export const IngredientList = (props: IIngredientListProps) => {
             <DrinkMixButton
                 onClick={() => {
                     addEmptyIngredient();
-                    setIsEditingIndex(ingredients.length);
+                    setIsEditingIndex(filteredIngredients.length);
                 }}
                 className="drinkMix_newIngredientButton"
             >
@@ -47,7 +46,7 @@ export const IngredientList = (props: IIngredientListProps) => {
                     (ingredient: IIngredient) => { onEditIngredient(isEditingIndex, ingredient); }
                 }
                 onClose={() => { setIsEditingIndex(-1); }}
-                defaultValue={ingredients[isEditingIndex] || {}}
+                defaultValue={filteredIngredients[isEditingIndex] || {}}
             />}
         </div>
     );

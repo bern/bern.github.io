@@ -281,9 +281,9 @@ img {
 }
 
 .drinkMix__glass--outer {
-  height: 303px;
+  height: 306px;
   width: 200px;
-  border-radius: 0px 0px 70px 70px;
+  border-radius: 0px 0px 35px 35px;
   border-left: 2px solid #777;
   border-right: 2px solid #777;
   border-bottom: 2px solid #777;
@@ -301,25 +301,25 @@ img {
 }
 
 .drinkMix__glass--shade {
-  height: 300px;
+  height: 306px;
   width: 200px;
-  border-radius: 0px 0px 65px 65px;
+  border-radius: 0px 0px 35px 35px;
   background-color: rgba(0, 0, 0, 0.03);
   position: absolute;
-  top: 3px;
+  top: 2px;
   left: 0;
   clip-path: polygon(74% 2%, 74% 5%, 74% 8%, 74% 13%, 74% 18%, 73% 27%, 72% 36%, 69% 46%, 64% 57%, 56% 68%, 48% 76%, 36% 84%, 23% 91%, 13% 96%, 18% 98%, 25% 99%, 35% 100%, 71% 100%, 89% 100%, 92% 99%, 96% 95%, 99% 89%, 100% 82%, 100% 0%, 89% 1%);
 }
 
 .drinkMix__glass--inner {
-  padding-top: 3px;
-  height: 300px;
+  padding-top: 26px;
+  height: 280px;
   width: 100%;
-  border-radius: 0px 0px 70px 70px;
+  border-radius: 0px 0px 35px 35px;
 }
 
 .drinkMix__glass--contents:last-child {
-  border-radius: 0px 0px 67px 67px;
+  border-radius: 0px 0px 32px 32px;
 }
 
 .drinkMix__glass--contents {
